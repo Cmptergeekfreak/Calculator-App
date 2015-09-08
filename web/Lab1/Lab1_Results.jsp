@@ -11,6 +11,26 @@
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lab 1 Result</title>
+        
+        <style>
+                html{
+                background:url("images/bg_title.jpg") #333d43;
+
+                }
+
+
+
+                body{
+                background:url("images/bg_head.jpg") repeat-x top center, url('imges/bg_vert.jpg') repeat-x;
+                min-height:500px;
+                font:14px/1.3 'Segoe UI',Arial, sans-serif;
+                color:#888;
+                padding:10px;
+                }
+            
+            
+        </style>
+        
     </head>
     <body>
         
