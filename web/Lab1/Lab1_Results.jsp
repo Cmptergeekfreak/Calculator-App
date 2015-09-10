@@ -38,7 +38,7 @@
         
         <h1>Lab 1 Result Page</h1>
         
-        <% 
+        <!--% 
             Object area = request.getAttribute("area");
             String areaResult = "";            
             
@@ -49,6 +49,8 @@
             }
             
             out.println("The area is: " + areaResult);
-        %>
+        % --> 
+        
+        <p><%= request.getAttribute("area") %></p>
     </body>
 </html>

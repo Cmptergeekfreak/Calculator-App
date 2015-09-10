@@ -5,13 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../css/mystyle.css" rel="stylesheet" type="text/css"> 
+        <!-- link href="../css/mystyle.css" rel="stylesheet" type="text/css" --> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Lab 3</title>
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <style>
                 html{
                 background:url("images/bg_title.jpg") #333d43;
@@ -46,11 +50,11 @@
             <label for="width">Enter a width: </label>
             <input id="width" name="width" type="text" value="" />
             
-            <input type="submit" name="submit" id="submit" value="Calculate" />           
+            <input type="submit" class="btn-info" name="submit"  id="submit" value="Calculate" />           
         </form>
         <br />
         <br />
-        <% 
+   <!--     <% 
             Object rectangleArea = request.getAttribute("rectangleArea");
             String rectangleAreaResult = "";            
             
@@ -63,7 +67,9 @@
             out.println("<br />" + rectangleAreaResult);
             //out.println("<a href='Lab3/Lab3_FormsResults.jsp'>Calculate Again</a>");
         %>
-        
+    -->
+    
+        <p> The area of this rectangle is: ${rectangleArea}</p>
         
         <br />
         <br />
@@ -71,11 +77,12 @@
             <label for="radius">Enter the radius: </label>
             <input id="radius" name="radius" type="text" value="" />
             
-            <input type="submit" name="submit" id="submit" value="Calculate" />           
+            <input type="submit" class="btn-success" name="submit" id="submit" value="Calculate" />           
         </form>
         <br />
         <br />
-        <% 
+        
+    <!--    <% 
             Object circleArea = request.getAttribute("circleArea");
             String circleAreaResult = "";            
             
@@ -87,7 +94,15 @@
             
             out.println("Final circle area is : " + circleAreaResult);
             //out.println("<a href='Lab3_FormsResults.jsp'>Calculate Again</a>");
-        %>
+        %> 
+        -->
+        
+        <p> The area of your circle was: 
+                                   
+            <c:set var="circleArea" value="${circleArea}"/>
+            <fmt:formatNumber var="i" type="number" pattern="0.00" value="${circleArea}"/>
+            <c:out value="${i}" />
+        </p>
         
         
         <br />
@@ -99,11 +114,11 @@
             <label for="base">Enter a base: </label>
             <input id="base" name="base" type="text" value="" />
             
-            <input type="submit" name="submit" id="submit" value="Calculate" />           
+            <input type="submit" class="btn-warning" name="submit" id="submit" value="Calculate" />           
         </form>
         <br />
         <br />
-        <% 
+    <!--    <% 
             Object triangleArea = request.getAttribute("triangleArea");
             String triangleAreaResult = "";            
             
@@ -116,6 +131,10 @@
             out.println("<br />" + triangleAreaResult);
             //out.println("<a href='Lab3_FormsResults.jsp'>Calculate Again</a>");
         %>
+    --> 
+    
+    
+        <p> The area of this triangle is: ${triangleArea}</p>
         
     </body>
 </html>

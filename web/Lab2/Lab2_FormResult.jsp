@@ -61,6 +61,8 @@
             
             out.println("The rectangle area is : " + areaResult);
         %>    
+        
+        
             
     </body>
 </html>
